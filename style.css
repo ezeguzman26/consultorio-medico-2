@@ -1,0 +1,361 @@
+:root {
+  --primary: #2e5c8a;
+  --secondary: #5da9e9;
+  --light: #f4f8fb;
+  --text: #2b2b2b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text);
+  background: #ffffff;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
+.logo small {
+  display: block;
+  font-size: 0.75rem;
+  color: #666;
+}
+nav a {
+  margin-left: 35px;
+  color: var(--text);
+  font-weight: 600;
+}
+.nav-minimal a {
+  position: relative;
+  display: inline-block; /* CLAVE */
+  text-decoration: none;
+  padding: 0 px 0;
+  color: #0f172a; /* o el color que uses */
+}
+.nav-minimal a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2e5c8a;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  border-radius: 2px;
+}
+.nav-minimal a:hover::after {transform: scaleX(1);}
+
+.btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 30px;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 10px 18px;
+  border-radius: 30px;
+}
+.btn:hover {transform: scale(1.05);}
+
+.hero {
+  background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)), url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+  animation: fadeUp 0.8s ease forwards;
+}
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons a {
+  margin-right: 15px;
+}
+.hero-btn {
+  background-color: #2e5c8a;
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 16px rgba(30, 94, 255, 0.25);
+}
+
+.hero-btn:hover {
+  background-color: #4c8dce;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(30, 94, 255, 0.4);
+}
+.hero-btn.secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #2e5c8a;
+  box-shadow: none;
+}
+
+.hero-btn.secondary:hover {
+  background-color: #4c8dce;
+  color: #ffffff;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 80px 8%;
+  gap: 60px;
+}
+
+.about ul {
+  margin-top: 20px;
+}
+
+.about li {
+  margin-bottom: 10px;
+}
+
+.about ul {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.about ul li {
+  list-style-position: inside;
+  padding-left: 0;
+}
+.about-text{
+  padding-top: 0%;
+}
+.about-image {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto 40px auto;
+  align-items: center;
+  padding-top: 20% ;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+
+.services {
+  background-color: #b1d1f1;
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.contact {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.contact-box {
+  margin-top: 30px;
+  background: #b1d1f1;
+  padding: 40px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.large {
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 1.1rem;
+}
+
+.footer {
+  background: #1f3e5a;
+  color: #fff;
+  text-align: center;
+  padding: 25px;
+}
+
+@media (max-width: 900px) {
+  .hero, .about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-text{
+    padding-top: 0%;
+  }
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  nav {
+    position: fixed;
+    top: 105px;
+    right: -100%;
+    width: 220px;
+    height: calc(100vh - 80px);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+    transition: right 0.3s ease;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav a {
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-image {
+    max-width: 300px;
+    padding-top: 5%;
+  }
+}
+
+/* OVERLAY PARA MENU MOBILE */
+.overlay {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
